@@ -15,11 +15,16 @@ public class Task3 {
     }
 
     private static boolean fuzzySearch(String car, String s) {
+        if (car == null || s == null) {
+            return false;
+        }
+
         int index = 0;
 
         char[] firstWord = car.toCharArray();
         char[] secondWord = s.toCharArray();
         for (int i = 0; i < secondWord.length; i++) {
+
             if (firstWord[index] == secondWord[i]) {
                 index++;
             }
