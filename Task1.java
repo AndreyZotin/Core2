@@ -58,6 +58,7 @@ public class Task1 {
     public static void main(String[] args) {
 
         Map<String, Long> map = Arrays.stream(RAW_DATA)
+                .filter(Objects::nonNull)
                 .distinct()
                 .sorted(Comparator.comparing(o -> o.id))
                 .collect(Collectors.groupingBy(Person::getName, Collectors.counting()));
